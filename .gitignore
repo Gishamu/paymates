@@ -2,12 +2,9 @@ db.sqlite3
 api/__init__.py
 api/__pycache__/__init__.cpython-38.pyc
 
-
 paymets/__init__.py
 
 paymets/__pycache__/__init__.cpython-38.pyc
-blockchain
-blockchain2
 paymets/.env
 api/__pycache__
 paymets/__pycache__
