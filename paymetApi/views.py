@@ -4,7 +4,9 @@ import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .utils import uuidGenerator, getToken
+from .utils import getToken
+from .serializers import ChargeBodySerializer
+from .types import ChargeBody
 
 
 class Checker(APIView):
@@ -25,24 +27,29 @@ class Charge(APIView):
 
     def post(self, request):
         token = getToken()
-        txRef = uuidGenerator()
         url = 'https://api.flutterwave.com/v3/charges?type=mobile_money_uganda'
         headers = {'Content-type': 'application/json',
                    'Authorization': f"Bearer {token}"}
-        body = {
-            'amount': request.data['amount'],
-            'currency': request.data['currency'],
-            'phone_number': request.data['phoneNumber'],
-            'email': request.data['email'],
-            'tx_ref': txRef,
-            'fullName': request.data['fullName'],
-            'network': request.data['network'],
-            'redirect_url': request.data['redirect_url'],
-            'description': request.data['description']
-        }
-        jsonBody = json.dumps(body)
+        data = ChargeBody(request.data['amount'],
+                          request.data['currency'],
+                          request.data['phoneNumber'],
+                          request.data['email'],
+                          request.data['fullName'],
+                          request.data['network'],
+                          request.data['redirect_url'],
+                          request.data['description']
+                          )
+        serializer = ChargeBodySerializer(data.chargeBodyObject())
+        jsonBody = json.dumps(serializer.data)
 
         sender = requests.post(url=f"{url}", data=jsonBody, headers=headers)
         response = Response()
         response.data = sender.json()
         return response
+
+
+class ViewTransaction(APIView):
+    """
+    This class is responsible for view sepcific 
+    """
+    pass
