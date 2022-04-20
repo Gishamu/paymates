@@ -4,7 +4,7 @@ import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .utils import getToken
+from .utils import requestNeeds
 from .serializers import ChargeBodySerializer
 from .types import ChargeBody
 
@@ -26,10 +26,9 @@ class Charge(APIView):
     """
 
     def post(self, request):
-        token = getToken()
-        url = 'https://api.flutterwave.com/v3/charges?type=mobile_money_uganda'
-        headers = {'Content-type': 'application/json',
-                   'Authorization': f"Bearer {token}"}
+        requestInfo = requestNeeds(
+            "https://api.flutterwave.com/v3/charges?type=mobile_money_uganda")
+
         data = ChargeBody(request.data['amount'],
                           request.data['currency'],
                           request.data['phoneNumber'],
@@ -42,7 +41,8 @@ class Charge(APIView):
         serializer = ChargeBodySerializer(data.chargeBodyObject())
         jsonBody = json.dumps(serializer.data)
 
-        sender = requests.post(url=f"{url}", data=jsonBody, headers=headers)
+        sender = requests.post(
+            url=f"{requestInfo['url']}", data=jsonBody, headers=dict(requestInfo['headers']))
         response = Response()
         response.data = sender.json()
         return response
@@ -52,4 +52,13 @@ class ViewTransaction(APIView):
     """
     This class is responsible for view sepcific 
     """
-    pass
+
+    def get(self, request, customerName: str):
+        requestInfo = requestNeeds(
+            "https://api.flutterwave.com/v3/transactions", customerName)
+
+        responseData = requests.get(
+            url=requestInfo['url'], params=dict(requestInfo['params']), headers=dict(requestInfo['headers']))
+        response = Response()
+        response.data = responseData.json()
+        return response
