@@ -36,6 +36,7 @@ After meeting all the needs, its time to install this project to your PC (Person
    In your prefarable directory clone this project, after the project has finished cloning go to its directory.
 
 * step3:<br>
+   Open your terminal and activate your virtual enviroment that you created in the previous step.
    After you have reached in the directory of the project you can run ``` pip install requirements ``` in the command line terminal. <br>
    This command installs all the dependences that are needed by the project to run.<br>
    After all dependences have been installed, the project is good to start if all  the steps have gone well.
