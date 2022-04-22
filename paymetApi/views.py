@@ -1,4 +1,3 @@
-from telnetlib import STATUS
 from django.shortcuts import render
 import requests
 import json
@@ -9,6 +8,7 @@ from rest_framework import status
 from .utils import requestNeeds
 from .serializers import ChargeBodySerializer
 from .types import ChargeBody
+from .errors import RequestError
 
 
 class Checker(APIView):
@@ -45,7 +45,7 @@ class Charge(APIView):
 
         sender = requests.post(
             url=f"{requestInfo['url']}", data=jsonBody, headers=dict(requestInfo['headers']))
-            
+
         data = sender.json()
         if data['status'] != "success":
             return Response(data, status=status.HTTP_400_BAD_REQUEST)
@@ -64,6 +64,13 @@ class ViewTransaction(APIView):
 
         responseData = requests.get(
             url=requestInfo['url'], params=dict(requestInfo['params']), headers=dict(requestInfo['headers']))
+            
+        try:
+            if not responseData.ok:
+                raise RequestError
+        except RequestError:
+            return Response({"error": "error happened from flutterwave"})
+
         response = Response()
         response.data = responseData.json()
         return response
