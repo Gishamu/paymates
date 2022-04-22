@@ -1,9 +1,11 @@
+from telnetlib import STATUS
 from django.shortcuts import render
 import requests
 import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
+from rest_framework import status
 from .utils import requestNeeds
 from .serializers import ChargeBodySerializer
 from .types import ChargeBody
@@ -43,9 +45,12 @@ class Charge(APIView):
 
         sender = requests.post(
             url=f"{requestInfo['url']}", data=jsonBody, headers=dict(requestInfo['headers']))
-        response = Response()
-        response.data = sender.json()
-        return response
+            
+        data = sender.json()
+        if data['status'] != "success":
+            return Response(data, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response(data)
 
 
 class ViewTransaction(APIView):
