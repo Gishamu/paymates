@@ -12,14 +12,15 @@ from .errors import RequestError
 
 
 class Checker(APIView):
+    """
+    Checker class makes a get request which returns a welcome test to show you
+    that you have succefuly installed the app to your project.
+    """
     def get(self, requests):
-        """
-        Checker class makes a get request which returns a welcome test to show you
-        that you have succefuly installed the app to your project.
-
-        """
         return Response("When you see this message that means that you have installed me successfuly")
 
+        
+      
 
 class Charge(APIView):
     """
