@@ -65,7 +65,7 @@ After meeting all the needs, its time to install this project to your PC (Person
  ``,
  your screen should show some thing like the image below
  
-![image info](../paymets/imgs/paymet%20welcome%20screen.PNG)
+![image info](/imgs/paymet%20welcome%20screen.PNG)
 
 the above image shows a welcome message that shows you that you have installed the project successfuly.
 
