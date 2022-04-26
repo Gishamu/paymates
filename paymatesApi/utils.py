@@ -1,5 +1,5 @@
 import uuid
-from paymets.settings import PAYMET_API_KEY
+from paymates.settings import PAYMET_API_KEY
 
 
 def uuidGenerator():

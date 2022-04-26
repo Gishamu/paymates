@@ -1,22 +1,22 @@
 # Table of contents
 
 - [Table of contents](#table-of-contents)
-- [PAYMETS](#paymets)
+- [paymates](#paymates)
 - [Introduction](#introduction)
   - [Who is to use it](#who-is-to-use-it)
     - [Frameworks used](#frameworks-used)
     - [Requirements](#requirements)
 - [Installation](#installation)
   - [Configuring the project](#configuring-the-project)
-- [Using the Paymets project](#using-the-paymets-project)
+- [Using the paymates project](#using-the-paymates-project)
   - [Starting a django server](#starting-a-django-server)
 
-# PAYMETS
+# paymates
 # Introduction
-Paymets is a django projects which is used to create paymetApi usable app/library.<br>
-PaymetApi is a REST API that consumes [fluterwave](https://flutterwave.com/ug/) API.
+paymates is a django projects which is used to create paymatesApi usable app/library.<br>
+paymatesApi is a REST API that consumes [fluterwave](https://flutterwave.com/ug/) API.
 ## Who is to use it
-<!-- Paymets is a REST API for mobile money payments in Uganda, it also consumes a nother API of [flutterwave](https://flutterwave.com/ug/). <br> -->
+<!-- paymates is a REST API for mobile money payments in Uganda, it also consumes a nother API of [flutterwave](https://flutterwave.com/ug/). <br> -->
 If you are a python developer who is developing a mobile money payment system for Uganda while consuming [flutterwave](https://flutterwave.com/ug/) APIs, this is REST API that you can use to finish your goal.
 Are you a python developer and you want to contribute to this project?!, this is for you..
 > **_NOTE:_**  This project is for mobile money payments in Uganda now, more features are still being developed.
@@ -47,13 +47,13 @@ After meeting all the needs, its time to install this project to your PC (Person
 
  After we have finished to install our project successfuly, we have to configure our with the right configuration so that our project can work very well.<br>
  This project uses a .env file to store enviromental variables and our secret keys.
- In the root directory of the project navigate to the root directory of folder payments which will contain files like settings, in that root directory, create a .env file, in the .env file create enviromental variable and name it PAYMET_API_KEY as the example below.
+ In the root directory of the project navigate to the root directory of folder payments which will contain files like settings, in that root directory, create a .env file, in the .env file create enviromental variable and name it paymates_API_KEY as the example below.
  ``` 
- PAYMET_API_KEY=yourAPIKey 
+ paymates_API_KEY=yourAPIKey 
  ```
  Remember you have to have an account with flutterwave, if you don't have an account with flutterwave, you can create one from [flutterwave](https://flutterwave.com/ug/) and if you have one, get your secret key from the flutterwave dashboard and place it where yourAPIKey is.
 
- # Using the Paymets project
+ # Using the paymates project
  After you have finished all the above processes we have mentioned, that means the project is read to get used.<br>
 ## Starting a django server
   For our project to start we have to start a server that will run our project and we can do so by going to the root directory of our project and run the following command in the commalind line interface 
@@ -65,7 +65,7 @@ After meeting all the needs, its time to install this project to your PC (Person
  ``,
  your screen should show some thing like the image below
  
-![image info](/imgs/paymet%20welcome%20screen.PNG)
+![image info](/imgs/paymates%20welcome%20screen.PNG)
 
 the above image shows a welcome message that shows you that you have installed the project successfuly.
 
