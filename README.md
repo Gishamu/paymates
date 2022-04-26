@@ -10,6 +10,8 @@
   - [Configuring the project](#configuring-the-project)
 - [Using the paymates project](#using-the-paymates-project)
   - [Starting a django server](#starting-a-django-server)
+- [End points to call](#end-points-to-call)
+  - [Charge end point](#charge-end-point)
 
 # paymates
 # Introduction
@@ -67,7 +69,31 @@ After meeting all the needs, its time to install this project to your PC (Person
  
 ![image info](/imgs/paymet%20welcome%20screen.PNG)
 
-the above image shows a welcome message that shows you that you have installed the project successfuly.
+the above image shows a welcome message that tells you how you have installed the project successfuly.
+# End points to call
+As any REST API there are end points to consume and they are listed below
+* [charge](#charge-end-point)
+* [transaction-history/str:customerName](#)
+* [verify](#)
+  
+## Charge end point
+The charge end point is a POST end point that we call when we are initiating for payment. Below is the example on how we can call the end point 
+```
+http://127.0.0.1:2020/charge
+```
+Below is the body that has to be sent with this POST end point.
+```
+{
+    "amount": 7000,
+    "currency": "UGX",
+    "phoneNumber": "07777777777",
+    "email": "testertester@gmail.com",
+    "fullName": "Mugisha tester",
+    "network": "Airtel",
+    "redirect_url": "https://528e-41-210-145-113.ngrok.io/api/verify",
+    "description": "this is for testing"
+}
+```
 
     
    
