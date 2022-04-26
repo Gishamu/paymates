@@ -1,12 +1,12 @@
 db.sqlite3
-paymetApi/__init__.py
-paymetApi/__pycache__/__init__.cpython-38.pyc
+paymatesApi/__init__.py
+paymatesApi/__pycache__/__init__.cpython-38.pyc
 
-paymets/__init__.py
-paymetApi/migrations/__init__.py
+paymates/__init__.py
+paymatesApi/migrations/__init__.py
 
-paymets/__pycache__/__init__.cpython-38.pyc
-paymets/.env
-paymetApi/__pycache__
-paymets/__pycache__
-paymetApi/migrations/__pycache__/__init__.cpython-310.pyc
+paymates/__pycache__/__init__.cpython-38.pyc
+paymates/.env
+paymatesApi/__pycache__
+paymates/__pycache__
+paymatesApi/migrations/__pycache__/__init__.cpython-310.pyc
