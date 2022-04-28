@@ -30,7 +30,7 @@ SECRET_KEY = 'a8#sbo6-e2*)e21f=ea1d_#_vz4&2&m+l)3)iww76@5hd!lj&z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-PAYMET_API_KEY= env("PAYMET_API_KEY")
+PAYMET_API_KEY = env("PAYMET_API_KEY")
 
 
 # Static files (CSS, JavaScript, Images)
