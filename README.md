@@ -3,7 +3,7 @@
 - [Table of contents](#table-of-contents)
 - [paymates](#paymates)
 - [Introduction](#introduction)
-  - [Who is to use it](#who-is-to-use-it)
+  - [Who can use it](#who-can-use-it)
     - [Frameworks used](#frameworks-used)
     - [Requirements](#requirements)
 - [Installation](#installation)
@@ -17,16 +17,19 @@
 
 # paymates
 # Introduction
-paymates is a django projects which is used to create paymatesApi usable app/library.<br>
-paymatesApi is a REST API that consumes [fluterwave](https://flutterwave.com/ug/) API.
-## Who is to use it
+paymates is a django project which is used to create paymatesApi library.<br>
+It was started in 2022 based on mobile money payments in Uganda.
+paymatesApi library is a REST API that consumes [fluterwave](https://flutterwave.com/ug/) API.
+## Who can use it
 <!-- paymates is a REST API for mobile money payments in Uganda, it also consumes a nother API of [flutterwave](https://flutterwave.com/ug/). <br> -->
-If you are a python developer who is developing a mobile money payment system for Uganda while consuming [flutterwave](https://flutterwave.com/ug/) APIs, this is REST API that you can use to finish your goal.
-Are you a python developer and you want to contribute to this project?!, this is for you.
-> **_NOTE:_**  This project is for mobile money payments in Uganda now, more features are still being developed.
+If you are a python developer who is developing a mobile money payment system while consuming [flutterwave](https://flutterwave.com/ug/) APIs, this is REST API that you can use to reach your goal.
+This project is open to contributions.
+> **_NOTE:_**  At the moment this project is based on mobile money payments in Uganda.
 
 ### Frameworks used
-Django and django rest framework are the frameworks used for this project.
+
+* Django.
+* Django restframework
 ### Requirements
 
 * python >= 3.8
@@ -35,51 +38,51 @@ Django and django rest framework are the frameworks used for this project.
 * Flutterwave account
 
 # Installation
-After meeting all the needs, its time to install this project to your PC (Personal computer)
-* step1:<br>
-   On your PC creat a virtual enviroment in your preferable directory using a command line terminal.In this document we are not going to go into details on how to create a virtual enviroment using a terminal, you can make research on that.
-* step2:<br>
-   In your prefarable directory clone this project, after the project has finished cloning go to its directory.
+After meeting all the requirements, its time to install this project to your PC
+* Step1:<br>
+   On your PC create a virtual environment in your preferable directory using a command line terminal. In this document we are not going to go into details on how to create a virtual environment using a terminal, you can do research on that.
+* Step2:<br>
+   In your preferable directory, clone this project. After the project is done, go to its directory root.
 
-* step3:<br>
-   Open your terminal and activate your virtual enviroment that you created in the previous step.
-   After you have reached in the directory of the project you can run ``` pip install requirements ``` in the command line terminal. <br>
+* Step3:<br>
+   Open your terminal and activate your virtual environment  that you created in step one. Use command ``python3 -m venv <name_of_virtualenv> ``  for windows. 
+    Run ``` pip install requirements ``` in the command line terminal. <br>
    This command installs all the dependences that are needed by the project to run.<br>
-   After all dependences have been installed, the project is good to start if all  the steps have gone well.
+   After all dependences have been installed, the project is good to go.
 
 ## Configuring the project
 
- After we have finished to install our project successfuly, we have to configure our with the right configuration so that our project can work very well.<br>
- This project uses a .env file to store enviromental variables and our secret keys.
- In the root directory of the project navigate to the root directory of folder payments which will contain files like settings, in that root directory, create a .env file, in the .env file create enviromental variable and name it paymates_API_KEY as the example below.
+ After succeful installation, we have to configure the project with the right configuration so that our project can work very well.<br>
+ This project uses a ``.env file`` to store environmental variables and secret keys.
+ In the root directory of the cloned project, navigate to the root directory of paymates which will contain files like settings, in the same root directory create a ``.env file``, in the .env file create environmental variable and name it paymates_API_KEY as the example below.
  ``` 
  paymates_API_KEY=yourAPIKey 
  ```
  Remember you have to have an account with flutterwave, if you don't have an account with flutterwave, you can create one from [flutterwave](https://flutterwave.com/ug/) and if you have one, get your secret key from the flutterwave dashboard and place it where yourAPIKey is.
 
  # Using the paymates project
- After you have finished all the above processes we have mentioned, that means the project is read to get used.<br>
+ After you have finished all the above processes we have mentioned,the project is ready to get used.<br>
 ## Starting a django server
-  For our project to start we have to start a server that will run our project and we can do so by going to the root directory of our project and run the following command in the commalind line interface 
+  For the project to start, go to the root directory of the cloned project and run the following command in the command line interface. 
   ```
   python manage.py runserver 
   ```
   The server will run on `` http://127.0.0.1:8000/ `` URL.<br>
-  Copy the URL and run it in your browser adding and end point like this `` http://127.0.0.1:8000/api
+  Copy the URL and run it in your browser, adding an end point like this `` http://127.0.0.1:8000/api
  ``,
  your screen should show some thing like the image below
  
 ![image info](/imgs/paymet%20welcome%20screen.PNG)
 
-the above image shows a welcome message that tells you how you have installed the project successfuly.
+the above image shows a welcome message that lets you know the project was installed successfully.
 # End points to call
-As any REST API there are end points to consume and they are listed below
+As any REST API, there are end points to consume and they are listed below
 * [charge](#charge-end-point)
 * [transaction-history/str:customerName](#transaction-history-end-point)
 * [verify](#verify-end-point)
   
 ## Charge end point
-The charge end point is a POST end point that we call when we are initiating for payment. Below is the example on how we can call the end point 
+The charge end point is a POST end point that we call when we are initiating payment. Below is an example on how we can call the end point 
 ```
 http://127.0.0.1:8000/charge
 ```
@@ -99,7 +102,7 @@ Below is the body that has to be sent with this POST end point.
 > **_NOTE:_** redirect_url key value is the URL that recieves details of a transaction after it has been made. verify is the end point of paymate API. This is where you put webhook url if you have one. 
 
 
-After a POST request is made with the above body, the paymate API will communicate with the flutterwave API and if there is nothing that has gone wrong, The below response is returned
+After a POST request is made with the above body, the paymate API will communicate with the flutterwave API, and if there is nothing that has gone wrong, the below response is returned
 ```
 {
     "status": "success",
@@ -114,8 +117,9 @@ After a POST request is made with the above body, the paymate API will communica
 ``` 
 The ``meta.authorization`` object contains the details needed to complete the transaction. The ``mode`` is ``"redirect"``, meaning you should redirect your customer to the provided URL to complete the payment.
 To complete the payment, the customer authorizes it with their mobile money provider at the provided redirect URL. For example when you go to the redirect URL you get the below inteface
+
 ![image info](/imgs/flutterwave%20OTP.PNG)
-In the above interface you can Enter the OTP sent to you on the phone so that the transaction can be completed. For the testing case you can use ``123456`` as your OTP.
+In the above interface, you can Enter the OTP sent to you via SMS on mobile so that the transaction can be completed. For the testing case, you can use ``123456`` as your OTP.
 When the payment is completed, we'll send you a webhook notification. Here's what the response looks like:
 ```
 {
@@ -183,7 +187,7 @@ When the payment is completed, we'll send you a webhook notification. Here's wha
 From there, we can now verify the transaction by looking at key status value of the data object.
 
 ## transaction-history end point
-transaction-history is GET request that you can use to call the paymateAPI like ``http://127.0.0.1:8000/transaction-history/[[fullname]]`` where [[fullname]] is a spesfic fullname of the person you are trying to retrieve.
+transaction-history is a GET request that you can use to call the paymateAPI like ``http://127.0.0.1:8000/transaction-history/[[fullname]]`` where [[fullname]] is a specific fullname of the person you are trying to retrieve.
 When you call that end point, the response example below is returned
 ```
 {
@@ -258,8 +262,8 @@ When you call that end point, the response example below is returned
 }
 ```
  ## verify end point
- verify is a GET request for paymateAPI which is made to return a response for verification after the completion of the transaction is done.
- This end point acts as a webhook if you set it in the ``redirect_url`` of the body of the charge end point like the way it is shown in the [charge body](#charge-end-point) example.
+ verify is a GET request for paymateAPI, which is made to return a response for verification after the completion of the transaction.
+ This end point acts as a webhook if you set it in the ``redirect_url`` of the body of the charge end point. For reference: [charge body](#charge-end-point) example.
  It also returns response like this:
  ```
  {
