@@ -45,7 +45,7 @@ After meeting all the requirements, its time to install this project to your PC
    In your preferable directory, clone this project. After the project is done, go to its directory root.
 
 * Step3:<br>
-   Open your terminal and activate your virtual environment  that you created in step one. Use command ``python3 -m venv <name_of_virtualenv> ``  for windows. 
+   Open your terminal and activate your virtual environment  that you created in step one. Use command ``<name_of_virtual_enviroment>\Scripts\activate.bat ``  for windows. 
     Run ``` pip install requirements ``` in the command line terminal. <br>
    This command installs all the dependences that are needed by the project to run.<br>
    After all dependences have been installed, the project is good to go.
