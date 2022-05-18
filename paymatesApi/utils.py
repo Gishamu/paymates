@@ -1,5 +1,5 @@
 import uuid
-from paymates.settings import PAYMET_API_KEY
+from paymates.settings import PUBLIC_KEY
 
 
 def uuidGenerator():
@@ -17,7 +17,7 @@ def getToken():
     paymet token with is used for authorization when
     making requests
     """
-    token = str(PAYMET_API_KEY)
+    token = str(PUBLIC_KEY)
     return token
 
 
