@@ -120,7 +120,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-PAYMET_API_KEY = env("PAYMET_API_KEY")
+PUBLIC_KEY = env("PUBLIC_KEY")
 
 
 # Static files (CSS, JavaScript, Images)
