@@ -54,9 +54,9 @@ After meeting all the requirements, its time to install this project to your PC
 
  After succeful installation, we have to configure the project with the right configuration so that our project can work very well.<br>
  This project uses a ``.env file`` to store environmental variables and secret keys.
- In the root directory of the cloned project, navigate to the root directory of paymates which will contain files like settings, in the same root directory create a ``.env file``, in the .env file create environmental variable and name it paymates_API_KEY as the example below.
+ In the root directory of the cloned project, navigate to the root directory of paymates which will contain files like settings, in the same root directory create a ``.env file``, in the .env file create environmental variable and name it PUBLIC_KEY as the example below.
  ``` 
- paymates_API_KEY=yourAPIKey 
+ PUBLIC_KEY=yourAPIKey 
  ```
  Remember you have to have an account with flutterwave, if you don't have an account with flutterwave, you can create one from [flutterwave](https://flutterwave.com/ug/) and if you have one, get your secret key from the flutterwave dashboard and place it where yourAPIKey is.
 
