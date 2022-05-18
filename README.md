@@ -84,7 +84,7 @@ As any REST API, there are end points to consume and they are listed below
 ## Charge end point
 The charge end point is a POST end point that we call when we are initiating payment. Below is an example on how we can call the end point 
 ```
-http://127.0.0.1:8000/charge
+http://127.0.0.1:8000/api/charge
 ```
 Below is the body that has to be sent with this POST end point.
 ```
@@ -187,7 +187,7 @@ When the payment is completed, we'll send you a webhook notification. Here's wha
 From there, we can now verify the transaction by looking at key status value of the data object.
 
 ## transaction-history end point
-transaction-history is a GET request that you can use to call the paymateAPI like ``http://127.0.0.1:8000/transaction-history/[[fullname]]`` where [[fullname]] is a specific fullname of the person you are trying to retrieve.
+transaction-history is a GET request that you can use to call the paymateAPI like ``http://127.0.0.1:8000/api/transaction-history/[[fullname]]`` where [[fullname]] is a specific fullname of the person you are trying to retrieve.
 When you call that end point, the response example below is returned
 ```
 {
