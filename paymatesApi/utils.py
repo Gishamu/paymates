@@ -14,7 +14,7 @@ def uuidGenerator():
 def getToken():
     """
     getToken is the functtion that returns 
-    public_key token wich is used for authorization when
+    public_key token which is used for authorization when
     making requests
     """
     token = str(settings.PUBLIC_KEY)
