@@ -1,5 +1,5 @@
 import uuid
-from paymates.settings import PUBLIC_KEY
+from django.conf import settings
 
 
 def uuidGenerator():
@@ -14,10 +14,10 @@ def uuidGenerator():
 def getToken():
     """
     getToken is the functtion that returns 
-    paymet token with is used for authorization when
+    public_key token wich is used for authorization when
     making requests
     """
-    token = str(PUBLIC_KEY)
+    token = str(settings.PUBLIC_KEY)
     return token
 
 
