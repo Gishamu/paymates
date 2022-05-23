@@ -20,6 +20,7 @@
 paymates is a django project which is used to create paymatesApi library.<br>
 It was started in 2022 based on mobile money payments in Uganda.
 paymatesApi library is a REST API that consumes [fluterwave](https://flutterwave.com/ug/) API.
+> **_NOTE:_**  This is the source code that is used for development. If you want to use the app then you don't need to run this code, there is an installable version called [paymatesApi](https://pypi.org/project/paymatesApi/0.1.3/). You can install it by running `` pip install paymatesApi ``.
 ## Who can use it
 <!-- paymates is a REST API for mobile money payments in Uganda, it also consumes a nother API of [flutterwave](https://flutterwave.com/ug/). <br> -->
 If you are a python developer who is developing a mobile money payment system while consuming [flutterwave](https://flutterwave.com/ug/) APIs, this is REST API that you can use to reach your goal.
