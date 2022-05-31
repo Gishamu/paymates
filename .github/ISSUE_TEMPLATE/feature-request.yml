@@ -27,7 +27,7 @@ body:
   - type: textarea
     id: importance
     attributes:
-      label: why is it important
+      label: Why is it important
       description: Please tell us why the proposed change is needed.
     validations:
       required: true
