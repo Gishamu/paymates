@@ -1,6 +1,6 @@
-name: documentation Report
+name: Documentation Report
 description: This issue deals with mistakes, and typos in the documentation
-title: "[documentation issue]: "
+title: "[Documentation issue]: "
 labels: ["documentation"]
 # assignees:
 #   - octocat
